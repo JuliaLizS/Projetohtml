@@ -1,30 +1,9 @@
-<!-- Construa uma pagina que simule um
-site para venda de curso de
-programação.
-- Tente adicionar citações externas e
-abreviações, além de códigos (como
-estilização ou como exemplos).
-- Adicione informações de contato da
-empresa no final.
-- Se quiser, adicione tabela de preços e
-formulário de inscrição. -->
-
-<!--- Adicione alguns atributos
-aprendidos nesta aula ao seu
-site de programação.
-
-- Exemplo: você pode
-personalizar seu formulário de
-contato ou adicionar uma área
-interativa para o usuário digitar
-código.-->
-
 <!DOCTYPE html>
 <html lang="pt-br">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Curso TI</title>
+    <title>Document</title>
 </head>
 <body>
     <center><h2>Cursos de programação</h2></center>
@@ -33,21 +12,21 @@ código.-->
 
     <table border="1">
         <tr>
-            <th>Curso da Java</th>
+            <th scope="col">Curso da Java</th>
             <th>Curso de Python</th>
             <th>Curso de Lógica</th>
         </tr>
 
         <tr>
-            <th><img src="/img/java.jpg" alt="Java" width="250" height="150"></th>
-            <th><img src="/img/python.jpg" alt="Python" width="250" height="150"></th>
-            <th><img src="/img/logica.jpg" alt="Logica" width="250" height="150"></th>
+            <th><img aria-hidden="true" src="/img/java.jpg" alt="Java" width="250" height="150"></th>
+            <th><img aria-hidden="true" src="/img/python.jpg" alt="Python" width="250" height="150"></th>
+            <th><img aria-hidden="true" src="/img/logica.jpg" alt="Logica" width="250" height="150"></th>
         </tr>
 
         <tr>
             <th>
                 <details style="width: 250px;">
-                    <summary>Mais Informações</summary>
+                    <summary tabindex="0">Mais Informações</summary>
                     <q cite="https://luizgustavoss.wordpress.com/2009/02/06/visao-geral-da-tecnologia-java/">
                         A tecnologia Java&trade; há algum tempo, tem sido a principal escolha do mercado de TI para o desenvolvimento de sistemas distribuídos.
                     </q>
@@ -56,15 +35,15 @@ código.-->
             </th>
             <th>
                 <details style="width: 250px;">
-                    <summary>Mais Informações</summary>
+                    <summary tabindex="0" >Mais Informações</summary>
                     <q cite="https://www.alura.com.br/artigos/python">
                         Python se tornou uma das linguagens de programação mais populares do mundo nos últimos anos.
                     </q>
                 </details>
             </th>
             <th>
-                <details style="width: 250px;">
-                    <summary>Mais Informações</summary>
+                <details tabindex="0" style="width: 250px;">
+                    <summary >Mais Informações</summary>
                     <q cite="https://www.hostgator.com.br/blog/logica-de-programacao/">
                         A lógica de programação nada mais é do que a organização coerente das instruções do programa para que seu objetivo seja alcançado..
                     </q>
@@ -80,32 +59,36 @@ código.-->
         </tr>
 
         <tr>
-            <th><input type="checkbox"></th>
-            <th><input type="checkbox"></th>
-            <th><input type="checkbox"></th>
+            <th><input tabindex="0" type="checkbox"></th>
+            <th><input tabindex="0" type="checkbox"></th>
+            <th><input tabindex="0" type="checkbox"></th>
         </tr>
     </table>
 
-<br>
-<br>
-<br>
+    <br>
+    <br>
+    <br>
 
-<form action="http://127.0.0.1:5500/pg2.html">
-    <label for="Nome">Nome</label>
-    <input type="text" id="nome" required/>
+    <form action="http://127.0.0.1:5500/pg2.html">
+        <label for="Nome">Nome</label><br>
+        <input tabindex="0" type="text" id="nome" aria-required="true" required placeholder="Digite seu nome aqui"/><br>
+        <label for="Tel">Telefone</label><br>
+        <input tabindex="0" type="text" id="tel" aria-required="true" required placeholder="Digite seu telefone aqui"/><br>
+        <label for="nascimento">Data de nascimento</label><br>
+        <input tabindex="0" type="text" id="nascimento" aria-required="true" required placeholder="Digite seu nascimento aqui"/><br>
+        <label for="Sexo">Sexo</label><br>
+        <input tabindex="0" type="radio" name="sexo" id="F"><label for="F">F</label>
+        <input tabindex="0" type="radio" name="sexo" id="M"><label for="M">M</label>
+        <br>
+        <br>
+        <input tabindex="0" type="submit">
+    </form>
+
     <br>
+    <a href="https://infinityschool.com.br/a-escola/" role="button">Sobre a instituição</a><br>
     <br>
-    <label for="Tel">Telefone</label>
-    <input type="text" id="tel" required/>
-    <br>
-    <br>
-    <label for="Sexo">Sexo</label>
-    <input type="radio" name="sexo" id="F" required><label for="F">F</label>
-    <input type="radio" name="sexo" id="M" required><label for="M">M</label>
-    <br>
-    <br>
-    <input type="submit">
-</form>
+    <button aria-expanded="true" aria-label="fechar menu">Cancelar</button>
+
 
 </body>
 </html>
